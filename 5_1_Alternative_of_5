@@ -1,0 +1,34 @@
+// Alternative way of 5.
+alert("Haftalik ders ve etkinlik programini gormek icin istediginiz günü yazınız. Not: Lutfen Turkce karakter kullanmayiniz!");
+
+let gun = prompt("Gunu giriniz:").toLowerCase(); // Girdiyi küçük harfe çeviriyoruz.
+
+let program;
+
+if (gun != "pazartesi" && gun != "sali" && gun != "carsamba" && gun != "persembe" && gun != "cuma" && gun != "cumartesi" && gun != "pazar") {
+    alert("Lutfen gecerli bir gun giriniz, bas harfi buyuk yaziniz veya sayisal deger girmeyiniz!");
+} else {
+    switch (gun) {
+        case "pazartesi":
+        case "sali":
+        case "carsamba":
+        case "persembe":
+            program = "InClass";
+            break;
+        case "cuma":
+            program = "Teamwork";
+            break;
+        case "cumartesi":
+            program = "InClass + Workshop";
+            break;
+        case "pazar":
+            program = "Self-Study";
+            break;
+        default:
+            alert("Yanlis gun girildi!!!");
+    }
+
+    if (program) {
+        alert(`${gun} gunu program: ${program}`);
+    }
+}
